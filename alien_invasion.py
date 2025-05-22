@@ -8,8 +8,10 @@ class AlienInvasion:
         """Initialize the game and create game resources.""" 
         pygame.init() 
 
-        self.screen = pygame.display.set_mode((1280, 720)) 
+        self.screen = pygame.display.set_mode((960, 540)) 
         pygame.display.set_caption("Alien Invasion") 
+    
+
     
     def run_game(self): 
         """Start the main loop for the game.""" 
