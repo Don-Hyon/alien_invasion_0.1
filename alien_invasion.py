@@ -82,7 +82,8 @@ class AlienInvasion:
         self.ship.blitme() 
         for bullet in self.bullets.sprites(): 
             bullet.draw_bullet() 
-            
+        
+        # Screen display is updated. 
         pygame.display.flip() 
 
 if __name__ == '__main__': 
