@@ -5,9 +5,14 @@ class Settings:
         """Game's settings initialized.""" 
         # Screen settings 
         self.screen_width = 960 
-        self.screen_height = 540 
+        self.screen_height = 960 
         self.bg_color = (0, 12, 25) 
 
         # Ship settings 
-        self.ship_speed = 0.5
-    
+        self.ship_speed = 0.5 
+
+        # Bullet settings 
+        self.bullet_speed = 10.0 
+        self.bullet_width = 3 
+        self.bullet_height = 15 
+        self.bullet_color = (125, 249, 255) 
