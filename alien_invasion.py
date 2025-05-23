@@ -24,18 +24,9 @@ class AlienInvasion:
         while True: 
             self._check_events() 
             self.ship.update() 
-            self.bullets.update() 
+            self._update_bullets() 
             self._update_screen() 
 
-            # Removes old bullets that have long since went out of bounds. 
-            for bullet in self.bullets.copy(): 
-                if bullet.rect.bottom <= 0: 
-                    self.bullets.remove(bullet) 
-            
-            # Bullet counter (for debug purposes only).
-            # print(len(self.bullets)) 
-    
-            
     def _check_events(self): 
         """Respond to keypresses and mouse events.""" 
         for event in pygame.event.get(): 
@@ -71,7 +62,20 @@ class AlienInvasion:
         if len(self.bullets) < self.settings.bullets_allowed: 
             new_bullet = Bullet(self) 
             self.bullets.add(new_bullet) 
-    
+
+    def _update_bullets(self): 
+        """Update position of bullets and get rid of bullets.""" 
+        # Update bullet positions. 
+        self.bullets.update() 
+         
+        # Removes old bullets that have long since went out of bounds. 
+        for bullet in self.bullets.copy(): 
+            if bullet.rect.bottom <= 0: 
+                self.bullets.remove(bullet) 
+            
+            # Bullet counter (for debug purposes only).
+            # print(len(self.bullets)) 
+
     def _update_screen(self): 
         """Updates inages on screen, and flip to new screen.""" 
         self.screen.fill(self.settings.bg_color) 
