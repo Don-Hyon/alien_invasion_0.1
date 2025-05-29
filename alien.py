@@ -21,3 +21,8 @@ class Alien(Sprite):
 
         # Store alien's exact horizontal position. 
         self.x = float(self.rect.x) 
+    
+    def update(self): 
+        """Move alien to the right.""" 
+        self.x += self.settings.alien_speed 
+        self.rect.x = self.x 
