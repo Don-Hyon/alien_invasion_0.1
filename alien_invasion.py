@@ -73,6 +73,12 @@ class AlienInvasion:
         # Update bullet positions. 
         self.bullets.update() 
 
+        if not self.aliens: 
+            # Originally bullets are to be cleared when fleet is refreshed. 
+            # Create new fleet. 
+            # self.bullets.empty() 
+            self._create_fleet() 
+
         # Check for any bullets that have hit aliens. 
         # If bullet hits alien, both are removed. 
         collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
