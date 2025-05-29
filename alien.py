@@ -1,5 +1,6 @@
 import pygame 
 from pygame.sprite import Sprite 
+from settings import Settings 
 
 class Alien(Sprite): 
     """A class to represent a single alien in the fleet.""" 
@@ -8,6 +9,7 @@ class Alien(Sprite):
         """Initialize the alien and set its starting position.""" 
         super().__init__() 
         self.screen = ai_game.screen 
+        self.settings = ai_game.settings 
 
         # Load alien image and set its rectangular attribute. 
         self.image = pygame.image.load('images/alien_1.bmp') 

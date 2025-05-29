@@ -1,5 +1,7 @@
 import pygame 
 
+from settings import Settings
+
 class Ship: 
     """A class to manage the ship.""" 
 
