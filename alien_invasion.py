@@ -69,6 +69,7 @@ class AlienInvasion:
             self.stats.reset_stats() 
             self.stats.game_active = True 
             self.sb.prep_score() 
+            self.sb.prep_level() 
 
             # Hide mouse cursor. 
             pygame.mouse.set_visible(False)
@@ -143,6 +144,10 @@ class AlienInvasion:
             # Create new fleet. 
             self._create_fleet() 
             self.settings.increase_speed() 
+
+            # Increase level. 
+            self.stats.level += 1 
+            self.sb.prep_level() 
          
     def _update_aliens(self): 
         """Check if fleet is at an edge, 
