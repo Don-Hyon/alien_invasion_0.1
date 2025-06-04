@@ -70,6 +70,7 @@ class AlienInvasion:
             self.stats.game_active = True 
             self.sb.prep_score() 
             self.sb.prep_level() 
+            self.sb.prep_ships() 
 
             # Hide mouse cursor. 
             pygame.mouse.set_visible(False)
@@ -165,8 +166,9 @@ class AlienInvasion:
     def _ship_hit(self): 
         """Respond to ship hit by an alien.""" 
         if self.stats.ships_left > 0: 
-            # Decrement ships_left. 
+            # Decrement ships_left and update scoreboard. 
             self.stats.ships_left -= 1 
+            self.sb.prep_ships() 
         else: 
             self.stats.game_active = False 
             pygame.mouse.set_visible(True) 
